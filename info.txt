@@ -1,0 +1,131 @@
+``                   comillas template string 
+npm init            para crea el pack de inicio
+
+npm i               instalar dependencias
+npm i -D            normales o de desarrollo
+
+npm unistall        desisntalar dependencias
+
+npm run             correr scripts :
+
+"type": "module"              para cambiar la forma de exportar a javascript nativo
+
+
+"scripts": {
+    "start": "node index.js",     //hacer correr el server
+    "server": "nodemon index.js", //reiniciar el server
+  }
+
+
+
+//Despues de instalar "tailwindcss, postcss, postcss-cli, autoprefixer" :
+
+npx tailwindcss init -p       crear archivos asociados a tailwind  
+                              //NOTA: cambiarlos a ".cjs" por la por la forma de exportar archivos que cambiamos
+                              //NOTA: cambiar a "module.exports =" la parte de export del archivo "postcss.config.cjs"
+
+en "tailwind.config.cjs"       indicar la carpeta de vistas donde se usaran las clases
+
+
+"scripts": {
+    "css":"postcss public/css/tailwind.css -o public/css/app.css" //crear el archivo donde estarán los css de tailwind
+  }
+
+//NOTA: hacer correr "npm run css" cada vez que se aumente una clase 
+        o aumentar "--watch" en el script para que corra solo
+
+// Para la Base de Datos
+
+npm i sequelize mysql2       instalar el ORM(Object Relational Mapping) y el Gestor
+
+
+//Base de Datos
+
+npm i dotenv            //para manejar variables de entorno en la instancia de la base de datos
+
+//NOTA: Para leer datos de formularios se debe habilitar lectura de datos en el index.js
+
+app.use(express.urlencoded({extended: true}))
+
+npm i express-validator  // para validar todos los formularios
+
+import { check, validationResult} from 'express-validator'    //se importa en el controlador
+
+npm i bcrypt //para esconder el password
+
+
+npm i nodemailer // dependencia para enviar email
+
+
+// Proteccion contra CSRF
+
+npm i csurf cookie-parser
+se debe enviar el token publico en cada formulario para que se encuentre en el request y verifique que el request venga de nuestra pgina 
+
+// Json Web Tokens
+
+son para autenticar al usuario 
+
+npm i jsonwebtoken
+
+npm i -D webpack webpack-clin //para compilar archivos de javascript
+
+//dependencia de desarrollo porque se sube la version compilada
+
+webpack.config.js //crear archivo de configuracion de webpack
+
+"js": "webpack --watch" //en el package (scripts)
+
+npm run js //para compilar los archivos js
+
+//para hacer correr mas de 2 scripts en una terminal
+npm i -D concurrently
+
+"dev":"concurrently \"npm run css\" \"npm run js\" "   //Para correr las 2 sentencias al mismo tiempo
+
+npm run dev //para hacer Correr el css y el js
+npm run server //para hacer Correr el nodemon
+
+
+
+se crea la carpeta seed para llenar las tablas con atributos inventados
+
+"db:importar":"node ./seed/seeder.js -i"  // se manda por consola y se reciben 3 arguumentos en seeder :
+
+if(process.argv[2]=="-i"){ // el 2 valor del arreglo sera el que verifique si se desea importar datos 
+    importarDatos();
+}
+
+//se crea un archivo para las relaciones de la base de datos que se llam index,js
+
+//se crea la carpeta middleware para proteger las rutas y que no se puedan entrar a nustras paginas sin autenticarse
+
+
+npm i dropzone@5.9.3  //para agregar imagenes
+
+se agrega al form la clase de dropzone para que reconozca y se agreganlos styles de dropzone
+
+
+npm i multer  para habilitar la laectura de archivos multimedia
+
+se crea en el middleware una configuracion para multer
+
+
+cuando el form tiene la clase de dropzone el input submit deja de funcionar, por eso esta fuera en afregar-imagen.pug
+por eso es button
+
+
+
+
+
+
+Listar Propiedades
+
+pre= JSON.stringify(propiedades,undefined ,2) //para probar los datos que enviamos a la pagina
+
+//-pre= JSON.stringify(propiedades,undefined ,2)
+
+
+
+
+
